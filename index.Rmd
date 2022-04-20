@@ -1,0 +1,55 @@
+---
+title: "DeGroot_GithubConsumerComplaints"
+author: "Lia DeGroot"
+date: "4/19/2022"
+output: 
+  flexdashboard::flex_dashboard:
+  verticla_layout: scroll
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(scales)
+library(lubridate)
+library(ggthemes)
+library(esquisse)
+library(dplyr)
+library(flexdashboard)
+```
+
+```{r}
+complaints_bydate <- `complaints (1)` %>% 
+  count(date_received)
+```
+
+
+-------------------------------------
+    
+### Chart 1
+    
+```{r}
+
+complaints_bydate %>% 
+ggplot(complaints_bydate, aes(x = date_received, y = n)) + 
+  geom_line()
+```
+   
+Column {data-width=1000}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+
+ggplot(complaints_byproduct, aes(x = product)) +
+  geom_bar()
+
+```   
+ 
+### Chart 3
+    
+```{r}
+
+```
