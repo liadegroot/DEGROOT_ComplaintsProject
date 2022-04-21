@@ -18,8 +18,12 @@ library(esquisse)
 library(dplyr)
 library(flexdashboard)
 ```
+```{r}
+```
+
 
 ```{r}
+
 complaints_bydate <- `complaints (1)` %>% 
   count(date_received)
 ```
@@ -36,14 +40,15 @@ ggplot(complaints_bydate, aes(x = date_received, y = n)) +
   geom_line()
 ```
    
-Column {data-width=400}
+Column {data-width=1000}
 -------------------------------------
    
 ### Chart 2
 
 ```{r}
 
-
+ggplot(complaints_byproduct, aes(x = product, y = n)) +
+  geom_col()
 
 ```   
  

@@ -1,0 +1,31 @@
+---
+title: "DeGroot_InitialComplaintsAnalysis"
+author: "Lia DeGroot"
+date: "4/19/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(scales)
+library(lubridate)
+library(ggthemes)
+library(esquisse)
+library(dplyr)
+library(flexdashboard)
+```
+
+```{r}
+complaints_bydate <- `complaints (1)` %>% 
+  count(date_received)
+
+complaints_byproduct <- `complaints (1)` %>% 
+  count(product)
+```
+
+
+
