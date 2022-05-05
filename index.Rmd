@@ -1,7 +1,7 @@
 ---
 title: "DeGroot_GithubConsumerComplaints"
 author: "Lia DeGroot"
-date: "4/19/2022"
+date: "5/6/2022"
 output: 
   flexdashboard::flex_dashboard:
   verticla_layout: scroll
@@ -9,7 +9,6 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-
 `complaints (1)` <- readRDS("~/Desktop/github_lia/DEGROOT_GITHUBHOMEWOKR/complaints (1).rds")
 
 library(tidyverse)
