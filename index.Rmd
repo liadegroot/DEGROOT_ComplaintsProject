@@ -42,9 +42,14 @@ complaints_bydate <- `complaints (1)` %>%
 ### Chart 1 
     
 ```{r}
+`complaints (1)`$Month <- lubridate::month(`complaints (1)`$date_received)
 
-ggplot(complaints_bydate, aes(x = date_received, y = n)) + 
-  geom_line()
+monthcount <- count(`complaints (1)`, Month)
+
+ggplot(monthcount, aes(x = Month, y = n)) + 
+ geom_line() + labs(title = "Monthly Consumer Complaints", 
+                    subtitle = "Total number of consumer complaints per month in 2021"
+                      , y = "Number of complaints") 
 ```
    
 
