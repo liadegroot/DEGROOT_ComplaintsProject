@@ -35,8 +35,7 @@ complaints_bydate <- `complaints (1)` %>%
     
 ```{r}
 
-complaints_bydate %>% 
-ggplot(complaints_bydate, aes(x = date_received, y = n)) + 
+ggplot(complaints_bydate, aes(x = date_received, y = n)) +
   geom_line()
 ```
    
