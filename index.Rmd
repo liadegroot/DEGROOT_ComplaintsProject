@@ -44,7 +44,7 @@ complaints_bydate <- `complaints (1)` %>%
 monthcount <- count(`complaints (1)`, Month)
 
 ggplot(monthcount, aes(x = Month, y = n)) + 
- geom_line(color = "#FF7F50") + labs(title = "Monthly Consumer Complaints", 
+ geom_line(color = "#F28C28") + labs(title = "Monthly Consumer Complaints", 
                     subtitle = "Total number of consumer complaints per month in 2021"
                       , y = "Number of complaints") + theme(panel.grid = element_line(color = "#8ccde3",
                                   size = 0.75,
@@ -62,8 +62,16 @@ ggplot(monthcount, aes(x = Month, y = n)) +
 complaints_byproduct <- `complaints (1)` %>% 
   count(product)
 ggplot(complaints_byproduct, aes(x = product, y = n)) +
-  geom_col() +
-  coord_flip() 
+  geom_col(color = "#F28C28", fill = "#F28C28") +
+  coord_flip() +
+  labs(title = "Consumer Compaints by Product", 
+                    subtitle = "Total number of consumer complints by product 
+                    in 2021"
+                      , y = "Number of complaints", x = "Type of product") + 
+  theme(panel.grid = element_line(color = "#8ccde3",
+                                  size = 0.75,
+                                  linetype = 2))
+
  
 
 ```   
