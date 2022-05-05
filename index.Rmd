@@ -9,6 +9,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+
 `complaints (1)` <- readRDS("~/Desktop/github_lia/DEGROOT_GITHUBHOMEWOKR/complaints (1).rds")
 
 library(tidyverse)
@@ -22,10 +23,7 @@ library(dplyr)
 library(ggplot2)
 library(flexdashboard)
 library(kableExtra)
-install.packages("zoo")
-library(zoo)
-```
-```{r}
+
 ```
 
 
