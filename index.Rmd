@@ -1,12 +1,13 @@
 ---
-title: "DeGroot_GithubConsumerComplaints"
+title: "2021 Consumer Complaints"
 author: "Lia DeGroot"
 date: "5/6/2022"
 output: 
   flexdashboard::flex_dashboard:
-  verticla_layout: scroll
+    vertical_layout: fill
 
 ---
+
 
 ```{r setup, include=FALSE}
 
@@ -33,8 +34,9 @@ complaints_bydate <- `complaints (1)` %>%
   count(date_received)
 ```
 
+Column
 
--------------------------------------
+ -------------------------------------
     
 ### Chart 1 
     
@@ -52,7 +54,9 @@ ggplot(monthcount, aes(x = Month, y = n)) +
 ```
    
 
--------------------------------------
+Column
+
+ -------------------------------------
    
 ### Chart 2 
 
@@ -76,7 +80,8 @@ ggplot(complaints_byproduct, aes(x = product, y = n)) +
 
 ```   
  
- 
+ Column
+
  -------------------------------------
 
 ### Chart 3 
