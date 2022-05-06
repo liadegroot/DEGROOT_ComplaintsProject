@@ -24,6 +24,7 @@ library(dplyr)
 library(ggplot2)
 library(flexdashboard)
 library(kableExtra)
+library(stringr)
 
 ```
 
@@ -74,8 +75,9 @@ ggplot(complaints_byproduct, aes(x = product, y = n)) +
                       , y = "Number of complaints", x = "Type of product") + 
   theme(panel.grid = element_line(color = "#8ccde3",
                                   size = 0.75,
-                                  linetype = 2))
-
+                                  linetype = 2)) + 
+                          theme(axis.text = element_text(size = 5)) +
+  scale_x_discrete(labels = wrap_format(8))
  
 
 ```   
