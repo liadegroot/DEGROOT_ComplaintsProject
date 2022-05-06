@@ -31,16 +31,18 @@ library(knitr)
 ```
 
 
+{.tabset}
+-------------------------------------
+    
+### Complaints by Date
+
+
 ```{r}
 
 complaints_bydate <- `complaints (1)` %>% 
   count(date_received)
 ```
 
- -------------------------------------
-    
-### Chart 1 
-    
 ```{r}
 `complaints (1)`$Month <- lubridate::month(`complaints (1)`$date_received)
 
@@ -53,12 +55,12 @@ ggplot(monthcount, aes(x = Month, y = n)) +
                                   size = 0.75,
                                   linetype = 2))
 ```
-  
- -------------------------------------
+ 
+-------------------------------------
    
-### Chart 2 
+### Complaints by Product
 
-
+   
 ```{r}
 
 complaints_byproduct <- `complaints (1)` %>% 
@@ -79,10 +81,11 @@ ggplot(complaints_byproduct, aes(x = product, y = n)) +
 
 ```   
 
- -------------------------------------
+-------------------------------------
 
-### Chart 3 
-    
+### Complaints by State 
+
+   
 ```{r}
 complaints_bystate <- `complaints (1)` %>% 
   count(state) 
@@ -100,19 +103,51 @@ complaints_bystate %>%
   
  
 ```
--------------------------------------
     
-### Chart 4
+
+-------------------------------------
+
+### Responses to Complaints
+
 
 ```{r, results='asis'}
 
  complaints_byresponse <- `complaints (1)` %>% 
   count(company_response_to_consumer)
  
-```
-
-```{r, results='asis'}
 complaints_byresponse %>% 
   knitr::kable(caption = "Company Responses to Consumer Complaints") %>% 
   kableExtra::kable_styling(bootstrap_options = "striped", full_width = FALSE) 
- ``` 
+``` 
+
+-------------------------------------
+
+### About
+
+```
+
+The Consumer Financial Protection Bureau fields complaints from consumers about companies. 
+Each year, the bureau compiles data on each of the complaints that were filed. 
+This page displays information from the Consumer Finance Protection Bureau 
+summarizing some of the key findings from their consumer complaints in 2021. 
+On this page you’ll find a line graph displaying the change in number of complaints 
+month over month throughout the entire year and a bar graph showing the number of 
+complaints received over the entire year, categorized by month. If you scroll further, 
+you’ll find a table summarizing the number of complaints categorized by states 
+and a table summarizing the number of complaints categorized by the company’s 
+responses to the complaints. 
+
+These graphs show that in general, the number of monthly complaints increased over
+the course of the year and the category that received the highest number of 
+complaints was credit reporting services. 
+
+As you read through the data, keep in mind a few caveats 
+
+  - The monthly consumer complaint data excluded January and February
+  - The responses were categorized for the purposes of the data, so it's 
+    possible some responses include some nuance that can't be reflected
+    in the table
+    
+
+```
+
