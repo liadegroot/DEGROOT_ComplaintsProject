@@ -75,8 +75,8 @@ ggplot(complaints_byproduct, aes(x = product, y = n)) +
   theme(panel.grid = element_line(color = "#8ccde3",
                                   size = 0.75,
                                   linetype = 2)) + 
-                          theme(axis.text = element_text(size = 5)) +
-  scale_x_discrete(labels = wrap_format(8))
+                          theme(axis.text = element_text(size = 4)) +
+  scale_x_discrete(labels = wrap_format(7))
  
 
 ```   
