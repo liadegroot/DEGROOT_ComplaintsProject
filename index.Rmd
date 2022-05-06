@@ -99,6 +99,6 @@ complaints_bystate <- `complaints (1)` %>%
 ```{r, results='asis'}
 complaints_bystate %>% 
   knitr::kable(caption = "Consumer Complaints by State") %>% 
-  kableExtra::kable_styling(bootstrap_options = "striped")
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = FALSE)
  
 ```
