@@ -5,6 +5,7 @@ date: "5/6/2022"
 output: 
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
+    orientation: columns
 
 ---
 
@@ -36,8 +37,6 @@ complaints_bydate <- `complaints (1)` %>%
   count(date_received)
 ```
 
-Column
-
  -------------------------------------
     
 ### Chart 1 
@@ -54,10 +53,7 @@ ggplot(monthcount, aes(x = Month, y = n)) +
                                   size = 0.75,
                                   linetype = 2))
 ```
-   
-
-Column
-
+  
  -------------------------------------
    
 ### Chart 2 
@@ -82,8 +78,6 @@ ggplot(complaints_byproduct, aes(x = product, y = n)) +
  
 
 ```   
- 
- Column
 
  -------------------------------------
 
@@ -96,9 +90,29 @@ complaints_bystate <- `complaints (1)` %>%
  
 ```
 
+
 ```{r, results='asis'}
+
+  
 complaints_bystate %>% 
   knitr::kable(caption = "Consumer Complaints by State") %>% 
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = FALSE)
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = FALSE) 
+  
  
 ```
+-------------------------------------
+    
+### Chart 4
+
+```{r, results='asis'}
+
+ complaints_byresponse <- `complaints (1)` %>% 
+  count(company_response_to_consumer)
+ 
+```
+
+```{r, results='asis'}
+complaints_byresponse %>% 
+  knitr::kable(caption = "Company Responses to Consumer Complaints") %>% 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = FALSE) 
+ ``` 
