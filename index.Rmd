@@ -148,6 +148,10 @@ As you read through the data, keep in mind a few caveats
     possible some responses include some nuance that can't be reflected
     in the table
     
+    
+    
+    
+    
 
 ```
 
